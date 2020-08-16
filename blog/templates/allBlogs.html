@@ -1,10 +1,181 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block styles %} {% endblock %}
+
+
+{% block styles %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .blog-post__img img {
+        width: 100%;
+    }
+
+    .blog {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #eee;
+        padding: 0 1.5rem;
+    }
+
+    .blog-post {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 55rem;
+        padding: 3rem;
+        background-color: white;
+        box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, .2);
+        display: flex;
+        align-items: center;
+        border-radius: .8rem;
+    }
+
+    .blog-post__img {
+        margin-right: -4.5rem;
+        min-width: 21rem;
+        max-width: 21rem;
+        height: 17rem;
+        transform: translateX(-8rem);
+        position: relative;
+    }
+
+    .blog-post__img img {
+
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 0.8rem;
+    }
+
+    .blog-post__img::before {
+
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background: linear-gradient(to right, rgba(79, 172, 254, .2), rgba(0, 242, 254, .2)); */
+        box-shadow: .5rem .5rem 3rem 1px rgba(0, 0, 0, 0.05);
+        border-radius: .8rem;
+    }
+
+    .blog-post__date span {
+        display: block;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0.1rem 0;
+    }
+
+    .blog-post__title {
+        font-size: 2.5rem;
+        margin: .75rem 0.2rem;
+        margin-left: 0;
+        text-transform: uppercase;
+        color: #4facfe;
+    }
+
+    .blog-post__body {
+
+
+        margin-bottom: 2;
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    .blog-post__cta {
+
+        display: inline-block;
+        padding: .6rem 1.2rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: white;
+        background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+        border-radius: .8rem;
+        text-decoration: none;
+    }
+
+    .blog-post__cta:hover {
+        background: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
+        text-decoration: none;
+        color: white;
+    }
+    }
+    }
+
+    @media (max-width: 1068px) {
+        .blog-post {
+            width: 100%;
+        }
+
+        .blog-post__img {
+            min-width: 18rem;
+            max-width: 18rem;
+        }
+
+    }
+
+    @media (max-width: 868px) {
+        .blog-post {
+            padding: 2rem;
+            padding-top: 1rem;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .blog-post__img {
+            min-width: 100%;
+            max-width: 100%;
+            transform: translate(0, -2rem);
+            margin-right: 0;
+            margin-bottom: -1.8rem;
+        }
+
+        .blog-post__title {
+            font-size: 2rem;
+        }
+
+    }
+</style>
+{% endblock %}
+
+
 {% block title %} Blog | Pebblewave {% endblock %}
+
+
 {% block content %}
 
-{% for blog in blogs %}
-{{ blog.title }}
-{{ blog.body }}
-{% endfor %}{% endblock %}
+
+<div class="blog">
+    {% for blog in blogs %}
+    <div class="blog-post">
+        <div class="blog-post__img">
+            <img src="{{blog.image.url}}" alt="Blog Post Image">
+        </div>
+        <div class="blog-post__info">
+            <div class="blog-post__date">
+                <span>{{blog.date|date:'l'}}</span>
+                <span>{{blog.date|date:'j F Y'}}</span>
+            </div>
+            <h2 class="blog-post__title">{{blog.title}}</h2>
+            <p class="blog-post__body">{{blog.body|truncatechars:175}}</p>
+            <a href="#" class="blog-post__cta">Read More</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
