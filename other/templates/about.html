@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% load static %}
+{% block styles %}
+<style>
+    .img-wrap img {
+        width: 100%;
+    }
+
+    .img-wrap {
+        width: 100%;
+    }
+
+    .img-wrap img {
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #999999;
+    }
+
+    @media (min-width: 992px) {
+        #hometext {
+            font-size: 4rem;
+        }
+    }
+
+    #img-div {
+        animation-name: fade-in;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+</style>
+{% endblock %}
+{% block title %}About Me | Ananya Gupta | Pebblewave{% endblock %}
+{% block content %}
+<div class="container" style="text-align: center;">
+    <div class="row justify-content-center my-3">
+        <div id="img-div" class="col-5">
+            <div class="img-wrap mt-4">
+                <img src="{% static 'imgs/AnanyaAboutImg.jpg' %}" alt="Image of Ananya Gupta" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-9 text-center">
+            <h1 id="hometext" class="font-weight-bold">Ananya Gupta</h1>
+        </div>
+    </div>
+    <div class="px-5 mx-5" id="pDiv">
+        <p style="font-size: 2rem;">
+            Hi there!
+        </p>
+        <p>
+            I am Ananya Gupta, an art enthusiast, a Netflix addict, an epicurean
+            for Thai cuisine with the new found love for Tiktok.
+        </p>
+        <p>
+            Initially Colouring, painting and drawing came as a way to relax from
+            my academic routine, but before I realised, I started enjoying being
+            in my own world of doodles and drawings. I strongly believe,
+        </p>
+        <p>
+            We all have a passion,<br />
+            BUT<br />
+            Not everyone is able to discover it;<br />
+            Not everyone is able to use it;<br />
+            Not everyone is able to make a difference with it;<br />
+            Not everyone is able to get recognised by it..
+        </p>
+        <p>
+            Though if this becomes the case, this world would be a much happier
+            and fulfilling world.
+        </p>
+        <p>
+            Thanks to my supportive and loving parents, I got this golden platform
+            where I could convert my passion to a platform that could make a
+            difference in someone else’s life as well.. Hence PEBBLEWAVE was born.
+        </p>
+        <p>
+            This venture retails personalised envelopes, gift tags , wine bags to
+            start with. Part of the proceeds from the sale go towards
+            environmental causes and helping the underprivileged...
+        </p>
+        <p>
+            “SOME PAINTERS TRANSFORM THE SUN INTO A YELLOW SPOT, <br />
+            OTHERS TRANSFORM A YELLOW SPOT INTO THE SUN.”<br />
+            -PABLO PICASSSO.
+        </p>
+        <p class="mb-5">
+            Our aim at Pebblewave is and will always be to be able to transfrom
+            the yellow spot into the sun... I love my world of art and it will be
+            my honour and privilege to get connected with each one of you.
+        </p>
+    </div>
+</div>
+
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

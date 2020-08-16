@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %} {% endblock %}
+{% block title %} Blog | Pebblewave {% endblock %}
+{% block content %}
+
+{% for blog in blogs %}
+{{ blog.title }}
+{{ blog.body }}
+{% endfor %}{% endblock %}

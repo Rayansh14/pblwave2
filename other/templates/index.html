@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% load static %}
+{% block styles %}
+<style>
+    #showcase {
+        background-image: url('/static/imgs/art1.jpg');
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px 20px;
+    }
+
+    #big-center-logo {
+        width: 35vw;
+    }
+
+    @media (max-width: 1025px) {
+        #big-center-logo {
+            width: 50vw;
+        }
+
+        @media (max-width: 550px) {
+            #big-center-logo {
+                width: 75vw;
+            }
+        }
+    }
+
+    #showcase #buttons {
+        margin-top: 12px;
+    }
+
+    #showcase a {
+        margin: 10px 15px 0px 15px;
+        padding: 0px 10px 3px 10px;
+        font-size: 25px;
+        border: 3px solid #ffdbba;
+        border-radius: 20px;
+        background: white;
+        color: black;
+        text-decoration: none;
+    }
+
+    #showcase a:hover {
+        animation-name: change-color;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+</style>
+{% endblock %}
+
+
+{% block title %}Pebblewave | Art by Ananya Gupta{% endblock %}
+
+
+{% block content %}
+<header id="showcase">
+    <img src="{% static 'imgs/pebblewave.png' %}" alt="Pebblewave logo" id="big-center-logo" />
+    <div id="buttons">
+        <a class="fade-in-anim" href="{% url 'contact' %}">Contact Us</a>
+        <a class="fade-in-anim" href="#">Our Products</a>
+    </div>
+</header>
+{% endblock %}

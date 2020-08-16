@@ -1,0 +1,243 @@
+{% extends 'base.html' %} {% load static %}
+{% block styles %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .contact {
+        position: relative;
+        min-height: 100vh;
+        padding: 50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: aquamarine;
+        /*TODO: Choose a background image or a better background color*/
+        background-size: cover;
+    }
+
+    .contact .content {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .contact .content h2 {
+        font-size: 45px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 125px;
+    }
+
+    .contact .content p {
+        color: white;
+        font-weight: 300;
+    }
+
+    .container-custom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    @media (min-width: 1750px) {
+        .container-custom {
+            width: 80%;
+        }
+    }
+
+    .container-custom .contact-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-custom .contact-info .box {
+        position: relative;
+        padding: 20px 0px;
+        display: flex;
+    }
+
+    .container-custom .contact-info .box .icon {
+        min-width: 60px;
+        height: 60px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+    }
+
+    .container-custom .contact-info .box .text {
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color: white;
+        flex-direction: column;
+        font-weight: 300;
+    }
+
+    .container-custom .contact-info .box .text h3 {
+        font-weight: 500;
+        color: #00bcd4;
+    }
+
+    .contact-form {
+        width: 40%;
+        padding: 40px;
+        background: white;
+    }
+
+    .contact-form h2 {
+        font-size: 30px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .contact-form .input-box {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .contact-form .input-box input,
+    .contact-form .input-box textarea {
+        width: 100%;
+        padding: 5px 0px;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #333333;
+        outline: none;
+        resize: none;
+    }
+
+    .contact-form .input-box span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0px;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+        color: #666;
+    }
+
+    .contact-form .input-box input:focus~span,
+    .contact-form .input-box input:valid~span,
+    .contact-form .input-box textarea:focus~span,
+    .contact-form .input-box textarea:valid~span {
+        color: #e91e63;
+        font-size: 12px;
+        transform: translateY(-20px);
+    }
+
+    .contact-form .input-box input[type="submit"] {
+        width: 100px;
+        background: #00bcd4;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    @media (max-width: 991px) {
+        .contact {
+            padding: 40px;
+        }
+
+        .contact .contact h2 {
+            margin-bottom: 50px;
+        }
+
+        .container-custom {
+            flex-direction: column;
+        }
+
+        .container-custom .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .container-custom .contact-info,
+        .contact-form {
+            width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block title %} Contact Us | Pebblewave {% endblock %}
+
+{% block content %}<section class="contact">
+    <div class="content">
+        <h2>Contact Us</h2>
+    </div>
+    <div class="container-custom">
+        <div class="contact-info">
+            <div class="box">
+                <div class="icon">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>Address</h3>
+                    <p>
+                        11 Garden Enclave, South City, <br />
+                        Ludhiana, Punjab, <br />
+                        142027
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>Phone</h3>
+                    <p>
+                        9815501833
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>Email</h3>
+                    <p>
+                        name@example.com
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send Message</h2>
+            <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    <input type="text" name="name" required />
+                    <span>Full Name</span>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="email" required />
+                    <span>Email</span>
+                </div>
+                <div class="input-box">
+                    <textarea required name="msg"></textarea>
+                    <span>Your Message</span>
+                </div>
+                <div class="input-box">
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

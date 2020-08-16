@@ -1,0 +1,53 @@
+/*Main color scheme: #FFDBBA*/
+/*just to be clear, the name in the line above is not associated with a variable, so you have to manually update the color in eveery place */
+
+/*TODO: Decide on a primary and secondary color scheme for the website */
+
+/* generic css */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display='swap'");
+
+@keyframes change-color {
+  from {
+  }
+  to {
+    background-color: #ffdbba;
+    color: black;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  height: 30px;
+}
+
+.nav-item a {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+#navbar {
+  border-bottom: 0.5px solid black;
+}
+
+@media (min-width: 800px) {
+  .highlighted {
+    border-radius: 25px;
+    background-color: #ffdbba;
+    color: black;
+  }
+}
