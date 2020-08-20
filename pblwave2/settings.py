@@ -32,6 +32,7 @@ EMAIl_PORT = 587
 EMAIL_HOST_USER = 'rayanshgupta1406@gmail.com'
 EMAIL_HOST_PASSWORD = 'fERRARI1406'
 EMAIL_USE_TLS = True
+EMAIL_TIMEOUT = None
 
 # Application definition
 

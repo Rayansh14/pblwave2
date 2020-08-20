@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block styles %}
+<style>
+    #products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card-title {
+        text-transform: capitalize;
+        font-size: 24px;
+    }
+
+    .card-text {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 17px;
+    }
+
+    .card {
+        margin: 20px
+    }
+</style>
+{% endblock %}
+
+{% block title %}Products | Pebblewave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div id="products">
+        {% for product in products %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.image.url}}" class="card-img-top" alt="image">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">₹{{product.price}}</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Buy</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

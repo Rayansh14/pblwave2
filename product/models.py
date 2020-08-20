@@ -15,3 +15,6 @@ class Product(models.Model):
     ]
     product_type = models.CharField(
         max_length=3, choices=PRODUCT_CHOICES, default=ENVELOPE)
+
+    def __str__(self):
+        return self.name

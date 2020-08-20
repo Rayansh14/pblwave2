@@ -34,7 +34,7 @@
         margin-top: 12px;
     }
 
-    #showcase a {
+    #showcase>div>a {
         margin: 10px 15px 0px 15px;
         padding: 0px 10px 3px 10px;
         font-size: 25px;
@@ -45,10 +45,14 @@
         text-decoration: none;
     }
 
-    #showcase a:hover {
+    #showcase>div>a:hover {
         animation-name: change-color;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
+    }
+
+    #showcase #navbarDropdownMenuLink {
+        display: inline !important;
     }
 </style>
 {% endblock %}
@@ -61,8 +65,17 @@
 <header id="showcase">
     <img src="{% static 'imgs/pebblewave.png' %}" alt="Pebblewave logo" id="big-center-logo" />
     <div id="buttons">
-        <a class="fade-in-anim" href="{% url 'contact' %}">Contact Us</a>
-        <a class="fade-in-anim" href="#">Our Products</a>
+        <a href="{% url 'contact' %}">Contact Us</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Products
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'envelopes' %}">Envelopes</a>
+            <a class="dropdown-item" href="{% url 'giftTags' %}">Gift Tags</a>
+            <a class="dropdown-item" href="{% url 'wineBags' %}">Wine Bags</a>
+        </div>
+        </a>
     </div>
 </header>
 {% endblock %}
