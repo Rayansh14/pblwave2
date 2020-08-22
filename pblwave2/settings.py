@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ykil+s_ixn4kgs$cljbuyofdamj+gejpgi+$=0mc-6#itea02w0rc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pebblewave.pythonanywhere.com']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIl_PORT = 587
