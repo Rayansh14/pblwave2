@@ -15,9 +15,20 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-image: url('/static/imgs/bg.jpg');
         /*TODO: Choose a background image or a better background color*/
         background-size: cover;
+    }
+
+    .contact::after {
+        content: "";
+        background-image: url('/static/imgs/art3.jpg');
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
     }
 
     .contact .content {
@@ -25,15 +36,15 @@
         text-align: center;
     }
 
-    .contact .content h2 {
-        font-size: 45px;
+    .contact .content h1 {
+        font-size: 50px;
         font-weight: 500;
-        color: white;
+        color: black;
         margin-bottom: 125px;
     }
 
     .contact .content p {
-        color: white;
+        color: black;
         font-weight: 300;
     }
 
@@ -78,7 +89,7 @@
         display: flex;
         margin-left: 20px;
         font-size: 16px;
-        color: white;
+        color: black;
         flex-direction: column;
         font-weight: 300;
     }
@@ -176,7 +187,7 @@
 
 {% block content %}<section class="contact">
     <div class="content">
-        <h2>Contact Us</h2>
+        <h1>Contact Us</h1>
     </div>
     <div class="container-custom">
         <div class="contact-info">
