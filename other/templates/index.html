@@ -35,7 +35,7 @@
     }
 
     #showcase>div>a {
-        margin: 10px 15px 0px 15px;
+        margin: 10px 15px 50px 15px;
         padding: 0px 10px 3px 10px;
         font-size: 25px;
         border: 3px solid #ffdbba;
@@ -54,6 +54,13 @@
     #showcase #navbarDropdownMenuLink {
         display: inline !important;
     }
+
+    @media(max-width: 468px) {
+        #showcase>div>a {
+            margin: 0;
+        }
+
+    }
 </style>
 {% endblock %}
 
@@ -65,7 +72,7 @@
 <header id="showcase">
     <img src="{% static 'imgs/pebblewave.png' %}" alt="Pebblewave logo" id="big-center-logo" />
     <div id="buttons">
-        <a href="{% url 'contact' %}">Contact Us</a>
+        <a id="contact-btn" href="{% url 'contact' %}">Contact Us</a>
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Products

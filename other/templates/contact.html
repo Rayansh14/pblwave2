@@ -15,7 +15,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /*TODO: Choose a background image or a better background color*/
         background-size: cover;
     }
 
@@ -28,7 +27,15 @@
         bottom: 0;
         right: 0;
         position: absolute;
+        transform: scaleX(-1);
         z-index: -1;
+    }
+
+    @media (max-width: 1280px) {
+        .contact::after {
+            content: '';
+            background-image: url('/static/imgs/art2.jpg')
+        }
     }
 
     .contact .content {

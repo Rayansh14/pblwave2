@@ -15,7 +15,7 @@ def contact(request):
         name = request.POST["name"]
         email = request.POST["email"]
         msg = request.POST["msg"]
-        send_mail(  # TODO: Test out whether contact form sends mail or not. Last time got TimeoutError[WinError 10060]
+        send_mail(
             'Message from website',
             f'Somebody sent you a message through your Pebblwave website. \n \n Name: {name} \n Email: {email} \n \n Message: {msg}',
             'rayanshgupta1406@gmail.com',
