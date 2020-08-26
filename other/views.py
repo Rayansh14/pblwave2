@@ -19,7 +19,7 @@ def contact(request):
             'Message from website',
             f'Somebody sent you a message through your Pebblwave website. \n \n Name: {name} \n Email: {email} \n \n Message: {msg}',
             'rayanshgupta1406@gmail.com',
-            ['emperornabhith@gmail.com'],
+            ['rashi@stexports.com'],
             fail_silently=False
         )
     return render(request, 'contact.html')
