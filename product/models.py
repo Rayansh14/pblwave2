@@ -3,7 +3,6 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    price = models.FloatField()
     image = models.ImageField(upload_to="images/products")
     ENVELOPE = 'ENV'
     GIFT_TAG = 'GTA'
