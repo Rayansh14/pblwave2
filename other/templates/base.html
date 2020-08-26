@@ -16,13 +16,17 @@
   {% block styles %}{% endblock %}
   <title>{% block title %}{% endblock %}</title>
   <style>
-    #footer {
+    .footer {
       background-color: rgba(255, 219, 186, 0.6);
       text-align: center;
       padding: 13px 0;
+      margin-top: auto;
+      margin-bottom: 0px;
+      display: block;
+      font-size: 13px;
     }
 
-    #footer div {
+    .footer div {
       margin: 5px;
     }
   </style>
@@ -72,8 +76,9 @@
       </div>
     </div>
   </nav>
-  {% block content %}{% endblock %}
-  <footer id="footer">
+  <div style="min-height: 87vh;">
+    {% block content %}{% endblock %}</div>
+  <footer class="footer">
     <div id="developed-by">Website developed by Rayansh Gupta</div>
     <div id="email">rayanshgupta1406@gmail.com</div>
   </footer>

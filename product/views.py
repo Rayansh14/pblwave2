@@ -3,7 +3,7 @@ from .models import Product
 
 
 def envelopes(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('name')
     envelopes = []
     for product in products:
         if product.product_type == 'ENV':
@@ -12,7 +12,7 @@ def envelopes(request):
 
 
 def wineBags(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('name')
     wineBags = []
     for product in products:
         if product.product_type == 'WBA':
@@ -21,7 +21,7 @@ def wineBags(request):
 
 
 def giftTags(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('name')
     giftTags = []
     for product in products:
         if product.product_type == 'GTA':
