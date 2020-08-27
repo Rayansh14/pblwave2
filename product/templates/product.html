@@ -10,6 +10,8 @@
     .card-title {
         text-transform: capitalize;
         font-size: 24px;
+        font-family: 'Dancing Script', cursive;
+        
     }
 
     .card-text {
@@ -32,7 +34,7 @@
         <div class="card" style="width: 18rem;">
             <img src="{{product.image.url}}" class="card-img-top" alt="image">
             <div class="card-body">
-                <h5 class="card-title">{{product.name}}</h5>
+                <h2 class="card-title">{{product.name}}</h2>
                 <!-- <p class="card-text">₹{{product.price}}</p> -->
                 <a href="{% url 'contact' %}" class="btn btn-primary">Buy</a>
             </div>
