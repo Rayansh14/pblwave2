@@ -107,7 +107,7 @@
 
     @media (max-width: 968px) {
         .fa-quote-left {
-            top: -20%;
+            top: -12%;
             left: -7%;
         }
 
@@ -180,6 +180,15 @@
 
 <script>
     const firstItem = document.querySelector('.carousel-item');
+    const quotes = document.querySelectorAll('.fa');
+
     firstItem.classList.add("active");
+
+    if (screen.width <= 768) {
+        for (let x = 0; x < quotes.length; x++) {
+            quotes[x].classList.remove("fa-4x");
+            quotes[x].classList.add("fa-3x");
+        }
+    }
 </script>
 {% endblock %}
