@@ -1,5 +1,12 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from .models import Customer
+from django.template.defaulttags import register
+
+
+@register.filter
+def get_range(value):
+    return range(value)
 
 
 def index(request):
@@ -26,4 +33,5 @@ def contact(request):
 
 
 def happyCustomers(request):
-    return render(request, 'happyCustomers.html')
+    customers = Customer.objects.all()
+    return render(request, 'happyCustomers.html', {'customers': customers, 'length': len(customers)})

@@ -19,7 +19,7 @@
     .footer {
       background-color: rgba(255, 219, 186, 0.6);
       text-align: center;
-      padding: 10px 0;
+      padding: 6px 0;
       margin-top: auto;
       margin-bottom: 0px;
       display: block;
@@ -35,7 +35,7 @@
 <body>
   <!-- NavBar starts -->
 
-  <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbar">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white" id="navbar">
     <div class="container">
       <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'imgs/pebblewave.png' %}"
           alt="Pebblewave Logo" id="logo" /></a>
@@ -51,11 +51,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'allBlogs' %}"> Blog </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'happyCustomers' %}">
-              Happy Customers
-            </a>
-          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -68,6 +63,11 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'happyCustomers' %}">
+              Happy Clients
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link highlighted" href="{% url 'contact' %}">
               Contact Us
             </a>
@@ -76,7 +76,7 @@
       </div>
     </div>
   </nav>
-  <div style="min-height: 86vh;">
+  <div style="min-height: 87vh;">
     {% block content %}{% endblock %}</div>
   <footer class="footer">
     <div id="developed-by">Website developed by Rayansh Gupta</div>

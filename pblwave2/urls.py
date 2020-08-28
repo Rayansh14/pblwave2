@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about-us/', views.about, name='about'),
     path('contact-us/', views.contact, name='contact'),
-    path('happy-customers/', views.happyCustomers, name='happyCustomers'),
+    path('happy-clients/', views.happyCustomers, name='happyCustomers'),
 
     path('blog/', include('blog.urls')),
 
