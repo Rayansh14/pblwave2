@@ -6,4 +6,3 @@ local_settings.py
 /static/
 db.sqlite3
 /media/
-happyClients.txt
